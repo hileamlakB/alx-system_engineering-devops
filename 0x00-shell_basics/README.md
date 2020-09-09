@@ -5,8 +5,8 @@ explain what they do, but for more informaiton you can read the following conten
 
 This table is prepared so as to show you what each script does.
 
-script | job |
---------------------------- | -----------|
+Script | Task |
+----------------------------- | -----------|
 0-current_working_directory| gives the current working directory
 1-listit|lists items in the current directory
 10-back|takes you to the previous working directory
