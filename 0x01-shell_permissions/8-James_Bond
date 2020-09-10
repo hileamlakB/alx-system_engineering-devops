@@ -1,0 +1,2 @@
+#!/bin/bash
+chomd ug=,o=rwx hello
