@@ -1,2 +1,2 @@
 #!/bin/bash
-chomd ug=,o=rwx hello
+chomd 007 hello
