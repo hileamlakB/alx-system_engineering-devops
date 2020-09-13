@@ -1,4 +1,4 @@
-**0x00.Shell,I/o Redirection**
+## **0x00. Shell, I/O Redirection**
 
 In this directory there are scripts that are ment to do a spacific task. The name of each file tries to 
 explain what thiey do, but for more informaiton you can read the following content. This exercise are done 
@@ -40,8 +40,37 @@ Other Man Pages
 
 This table is prepared so as to show you what each script does.
 
-Script | Task | Command used |
------------------|--------------|----------------|
+Script | Task | Command used | Test results|
+-----------------|--------------|----------------|-----------|
+0-hello_world|
+1-confused_smiley|
+10-no_more_js|
+100-empty_casks|
+102-acrostic|
+102-acrostic2|
+103-the_biggest_fan|
+11-directories|
+12-newest_files|
+13-unique|
+14-findthatword|
+15-countthatword|
+15-countthatword-soln2|
+16-whatsnext|
+17-hidethisword|
+18-letteronly|
+19-AZ|
+2-hellofile|
+20-hiago|
+21-reverse|
+22-users_and_homes|
+3-twofiles|
+4-lastlines|
+5-firstlines|
+6-third_line|
+7-file|
+8-cwd_state|
+9-duplicate_last_line|
+
 </details>
 
 ## Author
