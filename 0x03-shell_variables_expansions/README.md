@@ -3,14 +3,6 @@
 In this directory there are scripts that are ment to do a spacific task. The name of each file tries to 
 explain what thiey do, but for more informaiton you can read the following content. This exercise are done as part of the ALX's full stack engeenering course. The instruction are mentioned as presented in the projects page.
 
-### Resources
-#### Read or watch:
-* [Expansions](http://linuxcommand.org/lc3_lts0080.php)
-* [Shell Arithmetic](https://www.gnu.org/software/bash/manual/html_node/Shell-Arithmetic.html)
-* [Variables](https://tldp.org/LDP/Bash-Beginners-Guide/html/sect_03_02.html)
-* [Shell initialization files](https://tldp.org/LDP/Bash-Beginners-Guide/html/sect_03_01.html)
-* [The alias Command](http://www.linfo.org/alias.html)
-
 #### man or help:
 * printenv
 * set
