@@ -1,14 +1,15 @@
 #!/usr/bin/env bash
+# Displays "Holberton School" 10 times using a while loop.
+#   On the 9th iteration, displays "Hi" before "Holberton School".
 
-i=0
+count=0
 
-while [ $i -lt 11 ]; 
-do 
-  if [ $i -eq 9 ]
+while [ $count -lt 10 ]
+do
+  if [ $count -eq 9 ]
   then
-    echo "Hi";
-  else
-    echo "Holberton School"; 
+    echo "Hi"
   fi
-  i=$[$i+1]; 
+  echo "Holberton School"
+  (( count++ ))
 done
