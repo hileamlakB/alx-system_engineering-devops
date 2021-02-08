@@ -1,7 +1,7 @@
 # Processes and signals
 
-In this project, I learned about handling process ID's and signals in Bash
-with `ps`, `pgrep`, `pkill`, `pkill`, `exit`, and `trap`.
+In this directory, There are practice exercises done in shell to learn about handling 
+process ID's and signals in Bash with `ps`, `pgrep`, `pkill`, `pkill`, `exit`, and `trap`.
 
 ## Tasks :page_with_curl:
 
@@ -79,4 +79,3 @@ with `ps`, `pgrep`, `pkill`, `pkill`, `exit`, and `trap`.
   * [102-zombie.c](./102-zombie.c): C program that creates five zombie processes.
   * For every zombie created, displays `Zombie process created, PID:
   <ZOMBIE_PID>`.
-
