@@ -34,7 +34,7 @@ fi
 if [ "$1" == "start" ]
 then
   sudo ./manage_my_process &
-  sudo echo $$ > /var/run/my_process.pid
+  echo $$ > /var/run/my_process.pid
   echo "manage_my_process started"
 
 elif [ "$1" == "stop" ]
@@ -47,6 +47,6 @@ then
   $0 stop >& /dev/null
   $0 start >& /dev/null
   echo "manage_my_process restarted"
-else 
+else
   echo "Usage: manage_my_process {start|stop|restart}"
 fi
