@@ -1,4 +1,4 @@
-#!/bin/bash
-#This script will make the current terminal listen on port 80
+#!/usr/bin/env bash
+# This script will make the current terminal listen on port 80
 
-nc -l -p 98
+nc -l localhost 98
