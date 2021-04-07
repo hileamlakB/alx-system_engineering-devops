@@ -1,5 +1,5 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # creates RSA key pairs named holberton
 # with the pass phrase betty
 
-ssh-keygen -b 4096 -f holberton -P betty
+ssh-keygen -b 4096 -f holberton -N betty
