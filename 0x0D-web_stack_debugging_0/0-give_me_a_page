@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# Configures a container, by installing apcahe server
+# that returns a page with a text "Hello Holbertoon"
+
+
+#install apache
+apt update
+apt install apache2 -y
+
+#add Hello Holberton to the html file
+echo "Hello Holberton" > /var/www/html/index.html
+
+service apache2 restart
