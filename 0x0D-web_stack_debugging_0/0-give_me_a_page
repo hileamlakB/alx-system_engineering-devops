@@ -3,4 +3,4 @@
 # that returns a page with a text "Hello Holbertoon"
 
 # restart the apache server
-service apache2 start
+sudo service apache2 start
