@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+# outputs information about domains
+# in a decorated way using dig
+
+
+sub_domains=(www lb-01 web-01 web-02)
+domain="$1"
+subdomain="$2"
+
+
+# uses dig and returns
+# a structerd string explaning about the domain that is
+# being dug
+
+domain_info()
+{
+
+  IFS=" " read -ra result <<<  "$(dig "$2.$1"| grep -A1 'ANSWER SECTION:'| tail -n1)"
+  sub_domain="$2"
+  _type="${result[3]}"
+  destination="${result[4]}"
+
+  echo "The subdomain $sub_domain is a $_type record and points to $destination"
+}
+
+if [[ -z "$subdomain" ]]
+then
+  for sub in "${sub_domains[@]}"
+  do
+    domain_info "$domain" "$sub"
+  done
+else
+  domain_info "$domain" "$subdomain"
+fi
+
