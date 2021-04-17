@@ -1,0 +1,43 @@
+global
+    log 127.0.0.1 local0 notice
+    maxconn 2000
+    user haproxy
+    group haproxy
+    tune.ssl.default-dh-param 2000
+
+defaults
+    log     global
+    mode    http
+    option  httplog
+    option  dontlognull
+    retries 3
+    option redispatch
+    timeout connect  5000
+    timeout client  10000
+    timeout server  10000
+    option forwardfor
+    option http-server-close
+
+frontend http-balancer
+    bind *:80
+    reqadd X-Forwarded-Proto:\ http
+    default_backend web-server
+
+
+frontend https-balancer
+    bind *:443 ssl crt /etc/haproxy/certs/www.codedecipher.tech.pem
+    acl http      ssl_fc,not
+    http-request redirect scheme https if http
+    reqadd X-Forwarded-Proto:\ https
+    acl letsencrypt-acl path_beg /.well-known/acme-challenge/
+    use_backend letsencrypt-backend if letsencrypt-acl
+    default_backend web-server
+
+backend web-server
+    balance roundrobin
+    redirect scheme https if !{ ssl_fc }
+    server 68-web-01 34.74.94.56:80 check
+    server 68-web-02 34.74.11.212:80 check
+
+backend letsencrypt-backend
+    server letsencrypt 127.0.0.1:54321
