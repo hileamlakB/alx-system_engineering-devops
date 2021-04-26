@@ -1,0 +1,13 @@
+#!/bin/bash
+# Installs and configures ufw firewall
+
+apt install ufw
+
+# make sure IPV6=yes is enabled in the config file
+grep IPV6=yes /etc/default/ufw > /dev/null || (grep IPV6=no /etc/default/ufw > /dev/nell && sed -i.bak 's/IPV6=no/IPV6=yes/g' /etc/default/ufw) ||  echo IPV6=yes >> /etc/default/ufw
+
+ufw allow ssh
+ufw allow 80
+ufw allow 443
+
+echo 'y' | sudo ufw enable
