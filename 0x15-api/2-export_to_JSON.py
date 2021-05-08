@@ -4,9 +4,9 @@ This gives an employee's todo
 with some id, and exports it to
 csv
 """
-import sys
-import requests
 import json
+import requests
+import sys
 
 
 base_url = "https://jsonplaceholder.typicode.com/"
@@ -19,7 +19,10 @@ user_response = requests.get("{}users?userId={}".format(base_url, emp_id))
 todo_lst = todo_response.json()
 name = user_response.json()[0]["name"]
 
-data = {str(emp_id): [{"task":todo["title"], "completed":todo["completed"], "username":name} for todo in todo_lst]}
+data = {str(emp_id): [{"task": todo["title"],
+                       "completed":todo["completed"],
+                       "username":name}
+                      for todo in todo_lst]}
 
 with open("{}.json".format(emp_id), "w") as data_file:
     data_file.write(json.dumps(data))

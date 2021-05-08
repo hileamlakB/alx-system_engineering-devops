@@ -3,8 +3,8 @@
 This gives an employees todo
 with some id
 """
-import sys
 import requests
+import sys
 
 
 base_url = "https://jsonplaceholder.typicode.com/"
