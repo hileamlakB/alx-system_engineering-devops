@@ -12,10 +12,10 @@ if __name__ == '__main__':
     emp_id = int(sys.argv[1])
 
     todo_response = requests.get("{}todos?userId={}".format(base_url, emp_id))
-    user_response = requests.get("{}users?userId={}".format(base_url, emp_id))
+    user_response = requests.get("{}users?id={}".format(base_url, emp_id))
 
     todo_lst = todo_response.json()
-    name = user_response.json()[0].get("username")
+    name = user_response.json()[0].get("name")
 
     str_format = "Employee {} is done with tasks({}/{}):\n"
     todo_str = ""
