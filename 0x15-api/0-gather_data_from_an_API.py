@@ -23,6 +23,6 @@ if __name__ == '__main__':
     for todo in todo_lst:
         if todo.get("completed"):
             complete += 1
-        todo_str += "\t " + todo.get("title") + "\n"
+            todo_str += "\t " + todo.get("title") + "\n"
 
     print(str_format.format(name, complete, len(todo_lst)) + todo_str[:-1])
