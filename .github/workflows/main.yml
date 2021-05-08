@@ -1,0 +1,40 @@
+name: python_linter
+
+on:
+  push:
+    branches: [ master ]
+  workflow_dispatch:
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      
+      - name: install python
+        uses: actions/setup-python@v2.2.2
+        with:
+          python-version: 3.4.x
+
+      - name: install and run autopep8
+        run: |
+          python3.4 -m pip install autopep8
+          git diff --name-only|xargs autopep8 --recursive --in-place --aggressive --aggressive
+
+      - name: install and run isort
+        run: |
+          python3.4 -m pip install isort
+          git diff --name-only|xargs isort -y
+
+      - name: Commit files
+        run: |
+           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+           git config --local user.name "github-actions[bot]"
+           git fetch
+           diffs=$(git diff origin/main)
+           echo "$diffs"
+           if [[ -n "$diffs" ]]; then git commit -a -m "Fixed style with auto pep8 and isort"; git push origin HEAD; fi
+
+          
+  
