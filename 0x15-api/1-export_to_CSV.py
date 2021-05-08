@@ -17,7 +17,7 @@ if __name__ == '__main__':
     user_response = requests.get("{}users?userId={}".format(base_url, emp_id))
 
     todo_lst = todo_response.json()
-    name = user_response.json()[0].get("name")
+    name = user_response.json()[0].get("username")
 
     with open("{}.csv".format(emp_id), "w") as data_file:
         csv_writer = csv.writer(data_file,

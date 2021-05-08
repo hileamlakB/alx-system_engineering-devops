@@ -24,7 +24,7 @@ if __name__ == "__main__":
 
         data[user.get("id")] = [{"task": todo.get("title"),
                                  "completed": todo.get("completed"),
-                                 "username": user.get("name")}
+                                 "username": user.get("username")}
                                 for todo in todos]
 
     with open("todo_all_employees.json", "w") as data_file:
